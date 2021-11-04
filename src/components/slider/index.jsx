@@ -1,28 +1,24 @@
 import css from "./style.module.scss";
-import { ImgSlider } from "..";
-import { useEffect, useRef, useState } from "react";
-import { AnimatePresence, AnimateSharedLayout, motion } from "framer-motion";
+import { ImgSlider, Project } from "..";
+import { forwardRef, useEffect, useState } from "react";
+import { AnimateSharedLayout, motion } from "framer-motion";
 
-export const Slider = ({ projects, translateX, setTranslateX }) => {
-  const ref = useRef(null);
-  const [middle, setMiddle] = useState(0);
+export const Slider = forwardRef(
+  ({ projects, translateX, selectedId, setSelectedId }, ref) => {
+    const [middle, setMiddle] = useState(null);
 
-  const [middleImg, setMiddleImg] = useState(null);
-  const [selectedId, setSelectedId] = useState(null);
+    const [middleImg, setMiddleImg] = useState(1);
 
-  useEffect(() => {
-    setMiddle(window.innerWidth / 2);
-    // projects.forEach((project) => projects.push(project));
-  }, []);
+    useEffect(() => {
+      setMiddle(window.innerWidth / 2);
+      // projects.forEach((project) => projects.push(project));
+    }, []);
 
-  // useEffect(() => {
-  //   const width = ref.current.offsetWidth;
-  //   setTranslateX(width - selectedId * 125);
-  // }, [selectedId]);
-
-  return (
-    <>
-      <AnimateSharedLayout>
+    return (
+      <>
+        <motion.h3 layoutId="title" className={css.title}>
+          {projects[middleImg - 1].title}
+        </motion.h3>
         <div className={css.mainContainer}>
           <div className={css.secondContainer}>
             <motion.ul
@@ -34,10 +30,10 @@ export const Slider = ({ projects, translateX, setTranslateX }) => {
               }}
               transition={{ duration: 0, type: "tween" }}
             >
-              {projects.map((project, index) => {
+              {projects.map((project) => {
                 return (
                   <ImgSlider
-                    key={index}
+                    key={project.id}
                     project={project}
                     translateX={translateX}
                     middle={middle}
@@ -51,32 +47,17 @@ export const Slider = ({ projects, translateX, setTranslateX }) => {
             </motion.ul>
           </div>
         </div>
-
         {projects.map((project) => {
           return (
-            <AnimatePresence>
-              {selectedId && (
-                <motion.div
-                  layoutId={selectedId}
-                  style={{ position: "absolute", top: 0, zIndex: 15 }}
-                >
-                  <motion.div
-                    style={{
-                      backgroundImage: `url(${project.img})`,
-                      width: 400,
-                      height: 400,
-                    }}
-                  />
-                  <motion.h2>{project.title}</motion.h2>
-                  <motion.button onClick={() => setSelectedId(null)}>
-                    X
-                  </motion.button>
-                </motion.div>
-              )}
-            </AnimatePresence>
+            <Project
+              key={project.id}
+              project={project}
+              selectedId={selectedId}
+              setSelectedId={setSelectedId}
+            />
           );
         })}
-      </AnimateSharedLayout>
-    </>
-  );
-};
+      </>
+    );
+  }
+);

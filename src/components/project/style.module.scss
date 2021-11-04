@@ -1,0 +1,107 @@
+@import "../../styles/variables";
+
+.imgSide {
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: 0;
+  z-index: 15;
+
+  background-color: $background;
+
+  padding: 20px 35px;
+
+  h3 {
+    font-size: 50px;
+    color: white;
+    text-transform: uppercase;
+  }
+  h4 {
+    font-size: 25px;
+    color: white;
+    opacity: 0.7;
+  }
+}
+
+.back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+
+  top: 40px;
+  left: 50px;
+
+  cursor: pointer;
+
+  img {
+    margin-right: 15px;
+  }
+
+  p {
+    font-size: 20px;
+    font-weight: 200;
+  }
+}
+
+.projectContainer {
+  width: 1050px;
+}
+
+.img {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  transform: translateY(-20px);
+}
+
+.stackContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.picturesContainer {
+  display: flex;
+
+  div {
+    position: relative;
+    width: 170px;
+    height: 100px;
+
+    margin: 0 5px;
+
+    cursor: pointer;
+  }
+}
+
+.link {
+  font-size: 25px;
+  font-weight: 300;
+  position: relative;
+
+  cursor: pointer;
+
+  &::before {
+    position: absolute;
+    content: "";
+    height: 0.5px;
+    width: 105px;
+    background-color: white;
+    bottom: -5px;
+    right: 0;
+  }
+}

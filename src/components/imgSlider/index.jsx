@@ -16,7 +16,7 @@ export const ImgSlider = ({
   useEffect(() => {
     const xItem = ref.current.getBoundingClientRect().left;
     if (middle >= xItem && middle <= xItem + 200) setMiddleImg(project.id);
-  }, [translateX, selectedId]);
+  }, [translateX]);
 
   const returnWidth = () => {
     if (middleImg === project.id) return 250;
@@ -32,18 +32,23 @@ export const ImgSlider = ({
   };
 
   return (
-    <motion.div
-      layoutId={project.id}
-      onClick={() => setSelectedId(project.id)}
-      style={{ backgroundImage: `url(${project.img})` }}
-      className={css.img}
-      ref={ref}
-      animate={{
-        width: returnWidth(),
-        height: returnHeight(),
-        filter: middleImg === project.id ? "grayscale(0)" : "grayscale(1)",
-      }}
-      transition={{ type: "spring", damping: 30, stiffness: 1000, mass: 2 }}
-    />
+    <motion.div layoutId={project.id}>
+      <motion.div
+        layoutId={`main-img-${project.id}`}
+        onClick={() => setSelectedId(project.id)}
+        style={{ backgroundImage: `url(${project.img})` }}
+        className={css.img}
+        ref={ref}
+        animate={{
+          width: returnWidth(),
+          height: returnHeight(),
+          filter: middleImg === project.id ? "grayscale(0)" : "grayscale(1)",
+        }}
+        transition={{ type: "spring", damping: 30, stiffness: 1000, mass: 2 }}
+        whileHover={{
+          filter: "grayscale(0)",
+        }}
+      />
+    </motion.div>
   );
 };
