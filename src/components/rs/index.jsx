@@ -18,6 +18,18 @@ export const RS = () => {
         <Image src="/data/img/gmail.png" width={32} height={24} />
       </motion.a>
       <motion.a
+        href={"https://github.com/GuillaumeMeheut/"}
+        target="_blank"
+        whileHover={{
+          filter: "grayscale(0)",
+        }}
+        animate={{
+          filter: "grayscale(1)",
+        }}
+      >
+        <Image src="/data/img/github.png" width={24} height={24} />
+      </motion.a>
+      <motion.a
         href={"https://www.linkedin.com/in/guillaume-meheut-836b66199/"}
         target="_blank"
         whileHover={{
