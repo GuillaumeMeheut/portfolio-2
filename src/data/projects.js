@@ -8,7 +8,7 @@ export const Projects = [
     stacks: [
       { name: "React", src: "/data/img/react.png" },
       { name: "NextJS", src: "/data/img/next.png" },
-      { name: "ChakraUI", src: "/data/img/chakraui.png" },
+      { name: "ChakraUI", src: "/data/img/chakraUI.png" },
       { name: "Firebase", src: "/data/img/firebase.png" },
     ],
     pictures: [
