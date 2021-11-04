@@ -1,0 +1,13 @@
+.img {
+  width: 100px;
+  height: 450px;
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  margin: 0 7.5px;
+  cursor: pointer;
+
+  scroll-snap-align: start;
+}

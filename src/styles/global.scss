@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap");
+
+@import "./variables";
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+
+  box-sizing: border-box;
+
+  text-decoration: none;
+  list-style: none;
+}
+
+html,
+body {
+  background-color: $background;
+  color: $primary-color;
+  font-family: "Oswald", sans-serif;
+  overflow: hidden;
+}
+
+a:visited,
+a {
+  color: $primary-color;
+}
