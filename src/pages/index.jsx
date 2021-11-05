@@ -43,9 +43,7 @@ export default function Home({ projects }) {
     <div className={css.page} onWheel={(e) => updateTranslate(e.deltaY)}>
       <AnimateSharedLayout>
         <header>
-          <motion.h1 layoutId="topLeft" animate>
-            Guillaume MEHEUT
-          </motion.h1>
+          <motion.h1 animate>Guillaume MEHEUT</motion.h1>
         </header>
 
         <main>

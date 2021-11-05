@@ -1,7 +1,7 @@
 import css from "./style.module.scss";
 import { ImgSlider, Project } from "..";
 import { forwardRef, useEffect, useState } from "react";
-import { AnimateSharedLayout, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 export const Slider = forwardRef(
   ({ projects, translateX, selectedId, setSelectedId }, ref) => {
@@ -16,7 +16,7 @@ export const Slider = forwardRef(
 
     return (
       <>
-        <motion.h3 layoutId="title" className={css.title}>
+        <motion.h3 className={css.title}>
           {projects[middleImg - 1].title}
         </motion.h3>
         <div className={css.mainContainer}>

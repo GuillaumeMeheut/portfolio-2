@@ -2,7 +2,7 @@ export const Projects = [
   {
     id: 1,
     title: "DoubleCard",
-    subtitle: "Jeux de carte en ligne encore en développement",
+    subtitle: "Online card games, friendlist, gambling, still in development",
     img: "/data/img/doublecard1.png",
     link: "https://double-card-72890.web.app/",
     stacks: [
@@ -21,7 +21,7 @@ export const Projects = [
   {
     id: 2,
     title: "Space Kubz",
-    subtitle: "Refonte d'un site pour mint des NFT en wordpress -> React",
+    subtitle: "Redesign of a site to mint NFT in wordpress -> React",
     img: "/data/img/spacekubz1.png",
     link: "https://spacekubz.com/",
     stacks: [
@@ -39,7 +39,7 @@ export const Projects = [
     id: 3,
     title: "Fammily",
     subtitle:
-      "Application permettant de recenser tout les MMI de Limoges de la promo actuelle et les précédentes, d'obtenir statistique sur leur orientations et également des offres d'emploi publier par les administrateur via une interface admin.",
+      "Application allowing to list all the MMI of Limoges of the current class and the previous ones, to obtain statistics on their orientations and also job offers published by the administrator via an admin interface.",
     img: "/data/img/fammily1.png",
     link: "https://fammily.herokuapp.com/",
     stacks: [
@@ -59,7 +59,7 @@ export const Projects = [
     id: 4,
     title: "Night Visions",
     subtitle:
-      "Conception d'un site web interactif pour un l'album de musique d'Imagine Dragons 'Night Visions'. A ouvrir sous chrome",
+      "Design of an interactive website for Imagine Dragons' music album 'Night Visions'. To be opened under chrome",
     img: "/data/img/nightvision1.png",
     link: "https://guillaumemeheut.github.io/night-visions/",
     stacks: [{ name: "SASS", src: "/data/img/sass.png" }],
@@ -69,7 +69,7 @@ export const Projects = [
     id: 5,
     title: "Dodge",
     subtitle:
-      "Mini-jeu où il faut esquiver les balles et ramasser des bonus pour monter son score",
+      "Mini-game where you have to dodge the balls and collect bonuses to raise your score",
     img: "/data/img/dodge1.png",
     link: "https://d0dge.herokuapp.com/",
     stacks: [],
@@ -83,7 +83,7 @@ export const Projects = [
     id: 6,
     title: "Lol ChampionStats",
     subtitle:
-      "Mini-jeu où il faut esquiver les balles et ramasser des bonus pour monter son score",
+      "The goal is to calculate the stats and the damage of the spells according to the equipped items and this for each champion.",
     img: "/data/img/lolstats1.png",
     link: "https://lol-champions.vercel.app/",
     stacks: [
@@ -96,7 +96,7 @@ export const Projects = [
   {
     id: 7,
     title: "Portfolio",
-    subtitle: "Mon premier portfolio réalisé en natif et un peu de React",
+    subtitle: "My first portfolio made in native and a bit of React",
     img: "/data/img/portfolio1.png",
     link: "https://www.guillaume-meheut.fr/",
     stacks: [{ name: "React", src: "/data/img/react.png" }],

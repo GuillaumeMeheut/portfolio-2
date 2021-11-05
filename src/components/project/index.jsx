@@ -11,38 +11,8 @@ export const Project = ({ project, selectedId, setSelectedId }) => {
     <AnimatePresence>
       {selectedId === project.id && (
         <>
-          {/* <motion.div
-            style={{
-              backgroundImage: `url(${project.img})`,
-            }}
-            className={css.imgSide}
-            animate={{
-              width: 110,
-              height: 450,
-            }}
-          /> */}
-          <motion.div
-            layoutId={selectedId}
-            className={css.container}
-            initial={false}
-            animate={{
-              width: "100%",
-              height: "100%",
-              opacity: 1,
-            }}
-            transition={{
-              type: "spring",
-              duration: 0,
-            }}
-            exit={{
-              transition: {
-                type: "tween",
-                duration: 0,
-              },
-            }}
-          >
+          <motion.div layoutId={selectedId} className={css.container}>
             <motion.div
-              layoutId="topLeft"
               animate
               exit={{
                 transition: {
@@ -56,46 +26,34 @@ export const Project = ({ project, selectedId, setSelectedId }) => {
               <motion.img src="/data/img/arrowBack.svg" />
               <motion.p>Back</motion.p>
             </motion.div>
-            <motion.h3
-              layoutId="title"
-              animate={false}
-              exit={{
-                opacity: 0,
-                transition: {
-                  type: "tween",
-                  duration: 0,
-                },
-              }}
-            >
-              {project.title}
-            </motion.h3>
-            <motion.h4
-              initial={{
-                translateY: 30,
-              }}
-              animate={{
-                translateY: 0,
-              }}
-            >
-              {project.subtitle}
-            </motion.h4>
+            <motion.h3>{project.title}</motion.h3>
+            <motion.h4>{project.subtitle}</motion.h4>
             <motion.div className={css.projectContainer}>
               <motion.div
                 layoutId={`main-img-${project.id}`}
-                style={{
-                  backgroundImage: `url(${image})`,
-                }}
+                src={image}
                 className={css.img}
-                initial={false}
+                initial={{
+                  opacity: 0,
+                }}
                 animate={{
-                  width: "100%",
-                  height: 500,
+                  opacity: 1,
                 }}
-                transition={{
-                  duration: 0,
+              >
+                <Image
+                  objectFit="cover"
+                  layout="fill"
+                  src={image}
+                  alt={project.img}
+                />
+              </motion.div>
+              <motion.div
+                animate
+                className={css.wrap}
+                exit={{
+                  display: "none",
                 }}
-              />
-              <motion.div animate className={css.wrap}>
+              >
                 <motion.div className={css.stackContainer}>
                   {project.stacks.map((stack) => {
                     return (

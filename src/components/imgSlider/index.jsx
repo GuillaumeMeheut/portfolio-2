@@ -1,6 +1,7 @@
 import css from "./style.module.scss";
 import { motion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
+import Image from "next/image";
 
 export const ImgSlider = ({
   project,
@@ -9,7 +10,6 @@ export const ImgSlider = ({
   middleImg,
   setMiddleImg,
   setSelectedId,
-  selectedId,
 }) => {
   const ref = useRef(null);
 
@@ -36,7 +36,6 @@ export const ImgSlider = ({
       <motion.div
         layoutId={`main-img-${project.id}`}
         onClick={() => setSelectedId(project.id)}
-        style={{ backgroundImage: `url(${project.img})` }}
         className={css.img}
         ref={ref}
         animate={{
@@ -48,7 +47,14 @@ export const ImgSlider = ({
         whileHover={{
           filter: "grayscale(0)",
         }}
-      />
+      >
+        <Image
+          objectFit="cover"
+          layout="fill"
+          src={project.img}
+          alt={project.img}
+        />
+      </motion.div>
     </motion.div>
   );
 };
